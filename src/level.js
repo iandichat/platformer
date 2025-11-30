@@ -62,7 +62,7 @@ export async function setupLevel(level, maxClearedLevel) {
   }
 
   // @ts-expect-error - fetch json
-  gameData = await LJS.fetchJSON(`../levels/${level}.json`)
+  gameData = await LJS.fetchJSON(!window.location.host.endsWith('github.dev') ? `/platformer/levels/${level}.json` : `../levels/${level}.json`)
   if (!gameData) throw Error('cannot read leveldata')
 
   for (const { name, tiles, collider } of gameData.layers) {

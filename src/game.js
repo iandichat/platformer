@@ -60,6 +60,6 @@ function gameRenderPost() {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Startup LittleJS Engine
-LJS.engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, ['../levels/spritesheet.png'])
+LJS.engineInit(gameInit, gameUpdate, gameUpdatePost, gameRender, gameRenderPost, [!window.location.host.endsWith('github.dev') ? '/platformer/levels/spritesheet.png' : '../levels/spritesheet.png'])
 
 console.log('game.js loaded!')
